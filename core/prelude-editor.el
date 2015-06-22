@@ -58,9 +58,9 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; autosave the undo-tree history
-(setq undo-tree-history-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq undo-tree-auto-save-history t)
+;(setq undo-tree-history-directory-alist
+;      `((".*" . ,temporary-file-directory)))
+;(setq undo-tree-auto-save-history t)
 
 ;; revert buffers automatically when underlying files are changed externally
 (global-auto-revert-mode t)
@@ -85,7 +85,7 @@
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
 (setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
+;(sp-use-paredit-bindings)
 
 (show-smartparens-global-mode +1)
 
@@ -383,7 +383,7 @@ indent yanked text (with prefix arg don't indent)."
 (winner-mode +1)
 
 ;; diff-hl
-(global-diff-hl-mode +1)
+;(global-diff-hl-mode +1)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 ;; easy-kill
@@ -392,6 +392,7 @@ indent yanked text (with prefix arg don't indent)."
 
 ;; operate-on-number
 (require 'operate-on-number)
+(require 'smartrep)
 (smartrep-define-key global-map "C-c ."
   '(("+" . apply-operation-to-number-at-point)
     ("-" . apply-operation-to-number-at-point)
