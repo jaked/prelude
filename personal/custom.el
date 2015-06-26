@@ -7,6 +7,7 @@
  '(fci-rule-color "#383838")
  '(ido-default-buffer-method (quote selected-window))
  '(ido-default-file-method (quote selected-window))
+ '(ido-vertical-define-keys (quote C-n-C-p-up-down-left-right))
  '(prelude-auto-save nil)
  '(projectile-use-git-grep t)
  '(scala-indent:use-javadoc-style t)
