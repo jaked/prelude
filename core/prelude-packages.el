@@ -71,6 +71,7 @@
     smartrep
     undo-tree
     volatile-highlights
+    yasnippet
     zenburn-theme
     zop-to-char)
   "A list of packages to ensure are installed at launch.")

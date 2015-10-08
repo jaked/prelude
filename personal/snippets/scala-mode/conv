@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: conv
+# key: conv
+# binding: direct-keybinding
+# --
+val ${1:type}Conv = new Conv[${1:$(upcase-initials yas/text)}] {
+  val t = Type.${1:$(upcase-initials yas/text)}
+  def toVal(t: ${1:$(upcase-initials yas/text)}) = Val.$1(t)
+  def fromVal(v: Val.T) = v.as${1:$(upcase-initials yas/text)}
+}
