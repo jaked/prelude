@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: gen
+# key: gen
+# binding: direct-keybinding
+# --
+val ${1:type}Gen = implicitly[Arbitrary[${1:$(upcase-initials yas/text)}]].arbitrary

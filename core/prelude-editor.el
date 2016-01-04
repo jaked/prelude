@@ -254,16 +254,6 @@ The body of the advice is in BODY."
 (setq bookmark-default-file (expand-file-name "bookmarks" prelude-savefile-dir)
       bookmark-save-flag 1)
 
-;; load yasnippet
-(require 'yasnippet)
-(add-to-list 'yas-snippet-dirs prelude-snippets-dir)
-(add-to-list 'yas-snippet-dirs prelude-personal-snippets-dir)
-(yas-global-mode 1)
-
-;; term-mode does not play well with yasnippet
-(add-hook 'term-mode-hook (lambda ()
-                            (yas-minor-mode -1)))
-
 ;; projectile is a project management mode
 (require 'projectile)
 (setq projectile-cache-file (expand-file-name  "projectile.cache" prelude-savefile-dir))
@@ -325,7 +315,7 @@ The body of the advice is in BODY."
   (if (<= (- end beg) prelude-yank-indent-threshold)
       (indent-region beg end nil)))
 
-(advise-commands "indent" (yank yank-pop yas-expand) after
+(advise-commands "indent" (yank yank-pop) after
   "If current mode is one of `prelude-yank-indent-modes',
 indent yanked text (with prefix arg don't indent)."
   (if (and (not (ad-get-arg 0))
