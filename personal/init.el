@@ -30,4 +30,18 @@
          (lineno (number-to-string (line-number-at-pos))))
     (browse-url (concat "https://phabricator.twitter.biz/" repo "/" repo "/browse/master" path "$" lineno))))
 
+(defun scalafmt ()
+  "scalafmt a buffer"
+  (interactive)
+  (setenv "NAILGUN_PORT" "63537")
+  (save-excursion
+    (call-process-region
+     (point-max)
+     (point-min)
+     "/opt/twitter/bin/ng" t t nil
+     "scalafmt"
+     "--non-interactive"
+     "--config" "/Users/jdonham/workspace/source/.scalafmt.conf"
+     "--stdin")))
+
 (server-start)
